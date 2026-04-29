@@ -44,15 +44,18 @@ async function fetchPage(url) {
   try {
     // Используем официальный API Яндекс.Музыки
     const response = await axios.get(
-      `https://api.music.yandex.net/tracks/${trackId}`,
-      {
-        headers: {
-          'Accept': 'application/json',
-          'X-Yandex-Music-Client': 'YandexMusicAndroid/23020251',
-        },
-        timeout: 10000,
-      }
-    );
+  `https://api.music.yandex.net/tracks/${trackId}`,
+  {
+    headers: {
+      'Accept': 'application/json',
+      'Accept-Language': 'ru-RU,ru;q=0.9',
+      'X-Yandex-Music-Client': 'YandexMusicAndroid/23020251',
+      'X-Yandex-Music-Device': 'os=Android; os_version=9; manufacturer=Google; model=Pixel; clid=; device_id=random; uuid=random',
+      'User-Agent': 'Yandex-Music-API',
+    },
+    timeout: 10000,
+  }
+);
     // Возвращаем данные в формате который ожидает парсер
     return { __apiResponse: response.data, albumId, trackId };
   } catch (error) {
