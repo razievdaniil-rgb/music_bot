@@ -25,16 +25,7 @@ if (!BOT_TOKEN) {
 
 // ─── Инициализация бота ─────────────────────────────────────────────────────
 
-const { SocksProxyAgent } = require('socks-proxy-agent');
-const agent = new SocksProxyAgent('socks5://127.0.0.1:10808', {
-  timeout: 10000,
-});
-const bot = new Telegraf(BOT_TOKEN, {
-  telegram: {
-    agent,
-    timeout: 30000,   // ← увеличенный таймаут
-  }
-});
+const bot = new Telegraf(BOT_TOKEN);
 
 // ─── Тексты сообщений ───────────────────────────────────────────────────────
 
