@@ -21,7 +21,7 @@
     "cheerio": "^1.0.0",
     "dotenv": "^16.4.5",
     "socks-proxy-agent": "^10.0.0",
-    "telegraf": "^4.16.3"
+    "telegraf": "^4.12.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
